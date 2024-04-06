@@ -5,12 +5,19 @@
         "context": ".."
     },
     "forwardPorts": [1883],
-    "extensions": [
-        "platformio.platformio-ide"
-    ],
-    "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "platformio.platformio-ide"
+            ],
+            "settings": [
+                "terminal.integrated.defaultProfile.linux": "bash"
+            ],
+        }
     },
+   
     "mounts": [
         "source=/dev,target=/dev,type=bind,consistency=cached"
     ],
