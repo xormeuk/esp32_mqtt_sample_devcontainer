@@ -12,17 +12,18 @@
                 "ms-vscode.cpptools-extension-pack",
                 "platformio.platformio-ide"
             ],
-            "settings": [
+            "settings": {
                 "terminal.integrated.defaultProfile.linux": "bash"
-            ],
+            }
         }
     },
-   
     "mounts": [
-        "source=/dev,target=/dev,type=bind,consistency=cached"
+        "source=/dev,target=/dev,type=bind,consistency=cached",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind"
     ],
     "runArgs": [
         "--privileged"
     ],
     "remoteUser": "vscode"
 }
+

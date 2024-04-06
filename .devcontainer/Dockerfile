@@ -4,11 +4,12 @@ FROM python:3.9-slim
 # Set non-interactive installation mode for apt-get
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install system dependencies required for PlatformIO and Mosquitto clients
+# Install system dependencies required for PlatformIO, Mosquitto clients, and SSH client
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     build-essential \
     mosquitto-clients \
+    openssh-client \
     && rm -rf /var/lib/apt/lists/*
 
 # Install PlatformIO
