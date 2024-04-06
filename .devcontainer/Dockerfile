@@ -4,10 +4,11 @@ FROM python:3.9-slim
 # Set non-interactive installation mode for apt-get
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install system dependencies required for PlatformIO and clean up afterwards to reduce image size
+# Install system dependencies required for PlatformIO and Mosquitto clients
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     build-essential \
+    mosquitto-clients \
     && rm -rf /var/lib/apt/lists/*
 
 # Install PlatformIO
