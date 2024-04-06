@@ -1,0 +1,21 @@
+{
+    "name": "ESP32 MQTT Development",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "forwardPorts": [1883],
+    "extensions": [
+        "platformio.platformio-ide"
+    ],
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    "mounts": [
+        "source=/dev,target=/dev,type=bind,consistency=cached"
+    ],
+    "runArgs": [
+        "--privileged"
+    ],
+    "remoteUser": "vscode"
+}
